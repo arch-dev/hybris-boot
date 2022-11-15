@@ -1910,6 +1910,20 @@ case "$DEVICE" in
             -e 's block/platform/soc/1da4000.ufshc/by-name/xbl_b sdc1 ' \
             "$@"
         ;;
+        
+    "kane")
+        sed -i \
+            -e 's block/bootdevice/by-name/boot sda20 ' \
+            -e 's block/bootdevice/by-name/efs sda2 ' \
+            -e 's block/bootdevice/by-name/misc sda10 ' \
+            -e 's block/bootdevice/by-name/persist sda4 ' \
+            -e 's block/bootdevice/by-name/persist2 sda5 ' \
+            -e 's block/bootdevice/by-name/slotinfo sda9 ' \
+            -e 's block/bootdevice/by-name/system sda38 ' \
+            -e 's block/bootdevice/by-name/userdata sda42 ' \
+            -e 's block/platform/13520000.ufs/by-name/vendor sda36 ' \
+            "$@"
+        ;;
     *)
         cat <<EOF
 
